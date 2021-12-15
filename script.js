@@ -4,17 +4,20 @@ function addElement(name) {
 
 let count = 0;
 let logArray = [];
-
+let btnEdit =addElement("btn-edit");
+btnEdit.style.visibility="hidden";
 
 let inputName = addElement("input-name");
 inputName.focus();
 inputName.addEventListener("change", event => {
     let name = String(event.target.value);
-    addElement("counter-name").innerText = `${name}`;
+    addElement("counter-name").innerText = `${name}:`;
     inputName.style.display = "none";
+    btnEdit.style.visibility="visible";
 });
 
-addElement("btn-edit").addEventListener("click", function () {
+
+btnEdit.addEventListener("click", function () {
     inputName.style.display = "block";
     inputName.style.float="right";
 });
@@ -27,6 +30,7 @@ addElement("btn-plus").addEventListener("click", function () {
     updateCount(count);
 });
 
+
 addElement("btn-minus").addEventListener("click", function () {
     count--;
     let today = new Date();
@@ -38,7 +42,7 @@ addElement("btn-minus").addEventListener("click", function () {
 let details = addElement("log");
 
 function updateCount(count) {
-    addElement("count").innerText = `\t${count}`
-    let logStr = logArray.reduce((a, b) => a.concat(b));
+    addElement("count").innerText = `${count}`
+    let logStr = logArray.reduce((a, b) => b.concat(a));
     details.innerText = `${logStr}`;
 }
