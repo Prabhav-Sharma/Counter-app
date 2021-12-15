@@ -10,20 +10,23 @@
 </head>
 
 <body>
-
-    <span id="span-button">
+    <side>
+        <details id="log">
+        </details>
+    </side>
+    <section id="section-page">
         <div id="counter-div">
-            <input id="input-name" type="text" placeholder="Enter Name"></input>
-            <h2 id="counter-name"></h2>
-            <button id="btn-edit">✎</button>
+            <input id="input-name" type="text" placeholder="Enter Title"></input>
+            <button class="btn" id="btn-edit">✎</button>
+            <h2 id="counter-name">  </h2>
             <h2 id="count"></h2>
         </div>
-        <button id="btn-plus">+</button>
-        <button id="btn-minus">-</button>
-    </span>
-    <details id="log">
-
-    </details>
+        <div class="outer">
+        <button class="btn" id="btn-minus">-</button>
+        <button class="btn" id="btn-plus">+</button>
+    </div>
+    </section>
+   
     <script src="script.js"></script>
 </body>
 

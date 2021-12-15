@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
+body{
+    background-color: #fdf2f8;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+:root{
+--plus-color: #5eead4;
+--minus-color: #E52B50;
+
+}
+
+.outer{
+    text-align: center;
+}
+
+.btn, #btn-edit{
+    display: inline-block;
+    box-shadow: 1px -1px #e9d5ff;
+}
+
+#btn-edit{
+    background-color: #e9d5ff;
+}
+
+#btn-plus{
+background-color: var(--plus-color);
+font-size: 30em;
+width: 45%;
+height: 40%;
+}
+
+#btn-minus{
+    background-color:var(--minus-color);
+    font-size: 30em;
+    width: 45%;
+    height: 40%;
+}
+
+#section-page{
+min-height: 100vh;
+text-align: center;
+}
+
+
+#counter-name, #count{
+    display: inline-block;
+    font-size: 3vw;
+}
+
+#log{
+    position: absolute;
+}
+
+
+

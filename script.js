@@ -11,11 +11,12 @@ inputName.focus();
 inputName.addEventListener("change", event => {
     let name = String(event.target.value);
     addElement("counter-name").innerText = `${name}`;
-    inputName.style.visibility = "hidden";
+    inputName.style.display = "none";
 });
 
 addElement("btn-edit").addEventListener("click", function () {
-    inputName.style.visibility = "visible";
+    inputName.style.display = "block";
+    inputName.style.float="right";
 });
 
 addElement("btn-plus").addEventListener("click", function () {
@@ -37,7 +38,7 @@ addElement("btn-minus").addEventListener("click", function () {
 let details = addElement("log");
 
 function updateCount(count) {
-    addElement("count").innerText = `${count}`
+    addElement("count").innerText = `\t${count}`
     let logStr = logArray.reduce((a, b) => a.concat(b));
     details.innerText = `${logStr}`;
 }
