@@ -1,13 +1,11 @@
-function addElement(name) {
-    return document.getElementById(name);
-}
+//ES6 Version
 
-let count = 0;
-let logArray = [];
-let btnEdit =addElement("btn-edit");
-btnEdit.style.visibility="hidden";
+const addElement= name => document.getElementById(name);
 
-let inputName = addElement("input-name");
+let count = 0 ,logArray = [], btnEdit =addElement(`btn-edit`);
+btnEdit.style.visibility=`hidden`;
+
+let inputName = addElement(`input-name`);
 inputName.focus();
 inputName.addEventListener("change", event => {
     let name = String(event.target.value);
@@ -17,12 +15,12 @@ inputName.addEventListener("change", event => {
 });
 
 
-btnEdit.addEventListener("click", function () {
+btnEdit.addEventListener("click", () => {
     inputName.style.display = "block";
     inputName.style.float="right";
 });
 
-addElement("btn-plus").addEventListener("click", function () {
+addElement("btn-plus").addEventListener("click", () => {
     count++;
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -31,7 +29,7 @@ addElement("btn-plus").addEventListener("click", function () {
 });
 
 
-addElement("btn-minus").addEventListener("click", function () {
+addElement("btn-minus").addEventListener("click", () => {
     count--;
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -41,7 +39,7 @@ addElement("btn-minus").addEventListener("click", function () {
 
 let details = addElement("log");
 
-function updateCount(count) {
+const updateCount= count => {
     addElement("count").innerText = `${count}`
     let logStr = logArray.reduce((a, b) => b.concat(a));
     details.innerText = `${logStr}`;
